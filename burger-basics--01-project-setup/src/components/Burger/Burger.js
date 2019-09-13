@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+import {withRouter} from 'react-router-dom';
 
 const Burger = (props) =>  {
-
+    console.log(props);
     let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
         return [...Array(props.ingredients[igKey])]
         .map((_, i) => { //Create array based on the no of ingredients selected dynamically (upto col no 52)
@@ -29,4 +30,4 @@ const Burger = (props) =>  {
     );
 }
 
-export default Burger;
+export default withRouter(Burger);
